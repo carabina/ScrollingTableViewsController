@@ -18,14 +18,12 @@ open class ScrollingTableViewsWithMenu: UIViewController {
     public init(tableViews: [ScrollingTableView], menuNames: [String]) {
         self.tableViews = tableViews
         self.scrollingView = ScrollingView(menuNames: menuNames)
-        
         super .init(nibName: nil, bundle: nil)
         
-        self.scrollingView.menuBar.delegate = self
-        self.scrollingView.scrollView.delegate = self
+        scrollingView.scrollView.delegate = self
+        scrollingView.menuBar.delegate = self
         
         self.view.addSubview(scrollingView)
-        
         scrollingView.scrollView.contentSize = CGSize(width: self.view.frame.width * CGFloat(tableViews.count), height: self.view.frame.height)
     }
     
@@ -44,7 +42,7 @@ open class ScrollingTableViewsWithMenu: UIViewController {
 
 //MARK: - UIScrollViewDelegate
 extension ScrollingTableViewsWithMenu: UIScrollViewDelegate {
-    private func scrollViewDidScroll(_ scrollView: UIScrollView) {
+    open func scrollViewDidScroll(_ scrollView: UIScrollView) {
         scrollingView.menuBar.moveLine(whenScrolling: scrollView)
     }
 }
