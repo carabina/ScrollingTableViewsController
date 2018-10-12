@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ScrollingTableViewsWithMenu: UIViewController {
+public class ScrollingTableViewsWithMenu: UIViewController {
     
     //MARK: - Properties
     private let tableViews: [UITableView]
@@ -33,7 +33,7 @@ class ScrollingTableViewsWithMenu: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
-    override func viewDidAppear(_ animated: Bool) {
+    override public func viewDidAppear(_ animated: Bool) {
         super .viewDidAppear(animated)
         for (index, tableView) in tableViews.enumerated() {
             tableView.frame = CGRect(x: self.view.frame.width * CGFloat(index), y: 0, width: self.view.frame.width, height: self.scrollingView.scrollView.frame.height)
@@ -44,14 +44,14 @@ class ScrollingTableViewsWithMenu: UIViewController {
 
 //MARK: - UIScrollViewDelegate
 extension ScrollingTableViewsWithMenu: UIScrollViewDelegate {
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+    private func scrollViewDidScroll(_ scrollView: UIScrollView) {
         scrollingView.menuBar.moveLine(whenScrolling: scrollView)
     }
 }
 
 //MARK: - MenubarDelegate
 extension ScrollingTableViewsWithMenu: MenuBarDelegate {
-    func menuBarMoveScrollViewWhenTapped(menuBar: MenuBar, button: UIButton) {
+    public func menuBarMoveScrollViewWhenTapped(menuBar: MenuBar, button: UIButton) {
         UIView.animate(withDuration: 0.25) {
             self.scrollingView.scrollView.contentOffset.x = CGFloat(button.tag) * self.view.frame.width
         }

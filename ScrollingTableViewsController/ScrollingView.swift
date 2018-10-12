@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ScrollingView: UIView {
+public class ScrollingView: UIView {
     
     //MARK: - Views
     let scrollView: UIScrollView = {
@@ -39,7 +39,7 @@ class ScrollingView: UIView {
     }
     
     //MARK: - View Setup
-    override func layoutSubviews() {
+    override public func layoutSubviews() {
         super .layoutSubviews()
         //Adds views to super view
         addSubview(menuBar)

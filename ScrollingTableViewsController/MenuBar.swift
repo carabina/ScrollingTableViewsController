@@ -8,11 +8,11 @@
 
 import UIKit
 
-protocol MenuBarDelegate: class {
+public protocol MenuBarDelegate: class {
     func menuBarMoveScrollViewWhenTapped(menuBar: MenuBar, button: UIButton)
 }
 
-class MenuBar: UIView {
+public class MenuBar: UIView {
     
     //MARK: - Views
     private var menuBarStackView: UIStackView!
@@ -68,7 +68,7 @@ class MenuBar: UIView {
     }
     
     //MARK: - View Setup
-    override func layoutSubviews() {
+    override public func layoutSubviews() {
         super .layoutSubviews()
         //Adds views to super view
         addSubview(menuBarLine)
