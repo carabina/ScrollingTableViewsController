@@ -8,12 +8,18 @@
 
 /* Begin PBXBuildFile section */
 		0AF719D9217008DF0048F63D /* ScrollingTableViewsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF719D8217008DF0048F63D /* ScrollingTableViewsController.swift */; };
+		0AF719F9217048250048F63D /* MenuBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF719F8217048250048F63D /* MenuBar.swift */; };
+		0AF719FB2170486C0048F63D /* ScrollingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF719FA2170486C0048F63D /* ScrollingView.swift */; };
+		0AF719FD2170494C0048F63D /* ScrollingTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF719FC2170494C0048F63D /* ScrollingTableView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0AF719CD217008CE0048F63D /* ScrollingTableViewsController.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ScrollingTableViewsController.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0AF719D1217008CE0048F63D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0AF719D8217008DF0048F63D /* ScrollingTableViewsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollingTableViewsController.swift; sourceTree = "<group>"; };
+		0AF719F8217048250048F63D /* MenuBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBar.swift; sourceTree = "<group>"; };
+		0AF719FA2170486C0048F63D /* ScrollingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollingView.swift; sourceTree = "<group>"; };
+		0AF719FC2170494C0048F63D /* ScrollingTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollingTableView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,7 +53,10 @@
 			isa = PBXGroup;
 			children = (
 				0AF719D1217008CE0048F63D /* Info.plist */,
+				0AF719F8217048250048F63D /* MenuBar.swift */,
 				0AF719D8217008DF0048F63D /* ScrollingTableViewsController.swift */,
+				0AF719FA2170486C0048F63D /* ScrollingView.swift */,
+				0AF719FC2170494C0048F63D /* ScrollingTableView.swift */,
 			);
 			path = ScrollingTableViewsController;
 			sourceTree = "<group>";
@@ -130,7 +139,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0AF719FB2170486C0048F63D /* ScrollingView.swift in Sources */,
+				0AF719F9217048250048F63D /* MenuBar.swift in Sources */,
 				0AF719D9217008DF0048F63D /* ScrollingTableViewsController.swift in Sources */,
+				0AF719FD2170494C0048F63D /* ScrollingTableView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
