@@ -12,7 +12,7 @@ public protocol MenuBarDelegate: class {
     func menuBarMoveScrollViewWhenTapped(menuBar: MenuBar, button: UIButton)
 }
 
-public class MenuBar: UIView {
+open class MenuBar: UIView {
     
     //MARK: - Views
     private var menuBarStackView: UIStackView!
@@ -29,7 +29,7 @@ public class MenuBar: UIView {
     weak var delegate: MenuBarDelegate?
     
     //MARK: - Initializers
-    init(menuNames: [String]) {
+    public init(menuNames: [String]) {
         arrangedViews = []
         super .init(frame: .zero)
         for (index, menuName) in menuNames.enumerated() {
@@ -45,7 +45,7 @@ public class MenuBar: UIView {
         buttonSelected(tag: 0)
     }
     
-    init(menuIcons: [UIImage]) {
+    public init(menuIcons: [UIImage]) {
         arrangedViews = []
         super .init(frame: .zero)
         for (index, menuIcon) in menuIcons.enumerated() {
@@ -63,12 +63,12 @@ public class MenuBar: UIView {
         buttonSelected(tag: 0)
     }
     
-    required init?(coder aDecoder: NSCoder) {
+    required public init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
     //MARK: - View Setup
-    override public func layoutSubviews() {
+    override open func layoutSubviews() {
         super .layoutSubviews()
         //Adds views to super view
         addSubview(menuBarLine)
@@ -91,7 +91,7 @@ public class MenuBar: UIView {
     }
     
     //Moves menubar line when scrolling left or right
-    func moveLine(whenScrolling scrollView: UIScrollView) {
+    open func moveLine(whenScrolling scrollView: UIScrollView) {
         guard let superview = scrollView.superview else { return }
         menuBarLine.frame.origin.x = scrollView.contentOffset.x / CGFloat(arrangedViews.count)
         let tag = Int(scrollView.contentOffset.x / CGFloat(superview.frame.width))

@@ -8,26 +8,26 @@
 
 import UIKit
 
-public class ScrollingTableView: UITableView {
+open class ScrollingTableView: UITableView {
     
-    init() {
+    public init() {
         super .init(frame: .zero, style: .plain)
         self.dataSource = self
         self.delegate = self
     }
     
-    required init?(coder aDecoder: NSCoder) {
+    required public init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 }
 
 //MARK: - TableViewDatasoure & Delegate
 extension ScrollingTableView: UITableViewDataSource, UITableViewDelegate {
-    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-      return 0
+    open func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 0
     }
     
-    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    open func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         return UITableViewCell()
     }
 }

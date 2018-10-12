@@ -8,7 +8,7 @@
 
 import UIKit
 
-public class ScrollingView: UIView {
+open class ScrollingView: UIView {
     
     //MARK: - Views
     let scrollView: UIScrollView = {
@@ -25,7 +25,7 @@ public class ScrollingView: UIView {
     
     private let menuNames: [String]
     //MARK: - Initializers
-    init(menuNames: [String]) {
+    public init(menuNames: [String]) {
         self.menuNames = menuNames
         self.menuBar = MenuBar(menuNames: menuNames)
         self.menuBar.translatesAutoresizingMaskIntoConstraints = false
@@ -34,12 +34,12 @@ public class ScrollingView: UIView {
         self.backgroundColor = .white
     }
     
-    required init?(coder aDecoder: NSCoder) {
+    required public init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
     //MARK: - View Setup
-    override public func layoutSubviews() {
+    override open func layoutSubviews() {
         super .layoutSubviews()
         //Adds views to super view
         addSubview(menuBar)
